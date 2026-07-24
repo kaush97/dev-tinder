@@ -8,9 +8,10 @@ const profileRouter = require("./routes/profile");
 const requestRouter = require("./routes/request");
 const userRouter = require("./routes/user");
 const http = require("http");
-
+require("../src/utils/cronJob");
 const app = express();
 const cors = require("cors");
+const paymentRouter = require("./routes/payment");
 require("dotenv").config();
 app.use(
   cors({
@@ -25,6 +26,7 @@ app.use("/", authRouter);
 app.use("/", profileRouter);
 app.use("/", requestRouter);
 app.use("/", userRouter);
+app.use("/", paymentRouter);
 
 const server = http.createServer(app);
 // initializeSocket(server);

@@ -18,6 +18,12 @@ const userSchema = new Schema(
     age: {
       type: Number,
     },
+    membershipType: {
+      type: Number,
+    },
+    //  membershipValidity: {
+    //   type: Number,
+    // },
     gender: {
       type: String,
       validate(value) {
