@@ -11,7 +11,7 @@ const http = require("http");
 require("../src/utils/cronJob");
 const app = express();
 const cors = require("cors");
-const paymentRouter = require("./routes/payment");
+// const paymentRouter = require("./routes/payment");
 const initializeSocket = require("./utils/socket");
 const chatRouter = require("./routes/chat");
 require("dotenv").config();
@@ -29,7 +29,7 @@ app.use("/", authRouter);
 app.use("/", profileRouter);
 app.use("/", requestRouter);
 app.use("/", userRouter);
-app.use("/", paymentRouter);
+// app.use("/", paymentRouter);
 app.use("/", chatRouter);
 
 const server = http.createServer(app);
