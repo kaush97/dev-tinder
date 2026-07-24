@@ -18,6 +18,10 @@ const userSchema = new Schema(
     age: {
       type: Number,
     },
+    isPremium: {
+      type: Boolean,
+      default: false,
+    },
     membershipType: {
       type: Number,
     },

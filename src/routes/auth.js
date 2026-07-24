@@ -63,7 +63,7 @@ authRouter.post("/login", async (req, res) => {
     );
     if (isPasswordValid) {
       const token = await jwt.sign({ _id: existingUser._id }, "Kaushal");
-      console.log(token);
+      
       res.cookie("token", token);
       res.send({
         data: existingUser,
@@ -83,7 +83,7 @@ authRouter.put("/user", async (req, res) => {
       returnDocument: "after",
     },
   );
-  console.log(User);
+
   res.send(user);
 });
 

@@ -9,7 +9,7 @@ const User = require("../models/user");
 paymentRouter.post("/payment/create", userAuth, async (req, res) => {
   try {
     const { firstName, lastName, email } = req.user;
-    console.log(req.user);
+   
     const { membershipType } = req.body;
     var options = {
       amount: membershipAmount[membershipType] * 100, // Amount is in currency subunits.
@@ -22,7 +22,7 @@ paymentRouter.post("/payment/create", userAuth, async (req, res) => {
         membershipType: membershipType,
       },
     };
-    console.log(options, "options");
+    
 
     const order = await RazorpayInstance.orders.create(options);
     const payment = new Payment({
